@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  schemaspy:
+    container_name: schemaspy-01
+    image: schemaspy/schemaspy:snapshot
+    volumes:
+      - ./db_docs:/output
+      - ./schemaspy.properties:/schemaspy.properties
+    networks:
+      - default
+      - ec-shared-network
+
+# networks:
+#   my-network-01:
+#     external: true
