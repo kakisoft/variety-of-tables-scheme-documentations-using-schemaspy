@@ -7,10 +7,3 @@ services:
     volumes:
       - ./db_docs:/output
       - ./schemaspy.properties:/schemaspy.properties
-#     networks:
-#       - default
-#       - shared-network-monica
-
-# networks:
-#   shared-network-monica:
-#     external: true

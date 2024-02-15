@@ -1,12 +1,18 @@
-# Redmine_tbls
-[tbls](https://github.com/k1LoW/tbls) を使ってDB定義書を作成して遊ぶ的なリポジトリ。  
-Redmine で実験。  
+# Redmine
 
 
-## Redmine のコンテナ起動
+## Redmine のコンテナ起動・終了
 ```
 docker-compose up -d
+docker-compose down
 ```
+
+## 終了時にコンテナを削除
+```
+docker-compose down --rmi all
+docker-compose down --rmi all --volumes
+```
+
 
 ## DB アクセス（MySQL）
 ```
@@ -16,30 +22,16 @@ password : redmine
 ※起動までかなり時間がかかる
 
 
-## tbls のインストール
-詳細は[公式サイト](https://github.com/k1LoW/tbls)を。
-
-#### Mac
-```
-brew install go
-go get github.com/k1LoW/tbls
-```
-
-#### Win
-```
-choco install -y golang
-choco install -y mingw
-
-go get github.com/k1LoW/tbls
-```
-
-
 ## テーブル定義作成
- 1. ```.tbls.yml``` を作成
- 2. ```tbls doc``` を実行
+```
+docker-compose -f docker-compose-schemaspy.yml up
+```
 
+## テーブル作成用のコンテナを終了・削除
+```
+docker-compose -f docker-compose-schemaspy.yml down
+docker-compose -f docker-compose-schemaspy.yml down --rmi all --volumes
+```
 
-
-
-
+____________________________________________________________________________________
 
