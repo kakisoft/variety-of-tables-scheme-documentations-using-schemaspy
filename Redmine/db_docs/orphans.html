@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>redmine.redmine</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>redmine</b></a><span class="navbar-brand" style="padding-left: 0">.redmine</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>Utility Tables</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Orphan Tables</h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="grid" data-columns>
+                                <div class="item">
+<img id="orphans" src="diagrams/orphans/orphans.png" usemap="#orphans" style="max-width:100%;" border="0" align="top">
+<map id="orphans" name="orphans">
+<area shape="rect" id="node1" href="tables/ar_internal_metadata.html" target="_top" title="ar_internal_metadata" alt="" coords="39,16303,362,16489">
+<area shape="rect" id="node2" href="tables/attachments.html" target="_top" title="attachments" alt="" coords="59,15835,342,16285">
+<area shape="rect" id="node3" href="tables/auth_sources.html" target="_top" title="auth_sources" alt="" coords="53,15249,348,15817">
+<area shape="rect" id="node4" href="tables/boards.html" target="_top" title="boards" alt="" coords="62,14899,339,15232">
+<area shape="rect" id="node5" href="tables/changes.html" target="_top" title="changes" alt="" coords="72,14577,329,14881">
+<area shape="rect" id="node6" href="tables/changeset_parents.html" target="_top" title="changeset_parents" alt="" coords="72,14432,329,14560">
+<area shape="rect" id="node7" href="tables/changesets.html" target="_top" title="changesets" alt="" coords="39,14081,363,14415">
+<area shape="rect" id="node8" href="tables/changesets_issues.html" target="_top" title="changesets_issues" alt="" coords="75,13936,327,14064">
+<area shape="rect" id="node9" href="tables/comments.html" target="_top" title="comments" alt="" coords="57,13644,345,13919">
+<area shape="rect" id="node10" href="tables/custom_field_enumerations.html" target="_top" title="custom_field_enumerations" alt="" coords="17,13411,385,13627">
+<area shape="rect" id="node11" href="tables/custom_fields.html" target="_top" title="custom_fields" alt="" coords="65,12767,336,13393">
+<area shape="rect" id="node12" href="tables/custom_fields_projects.html" target="_top" title="custom_fields_projects" alt="" coords="57,12621,345,12749">
+<area shape="rect" id="node13" href="tables/custom_fields_roles.html" target="_top" title="custom_fields_roles" alt="" coords="69,12476,332,12604">
+<area shape="rect" id="node14" href="tables/custom_fields_trackers.html" target="_top" title="custom_fields_trackers" alt="" coords="56,12331,345,12459">
+<area shape="rect" id="node15" href="tables/custom_values.html" target="_top" title="custom_values" alt="" coords="29,12097,372,12313">
+<area shape="rect" id="node16" href="tables/documents.html" target="_top" title="documents" alt="" coords="73,11835,328,12080">
+<area shape="rect" id="node17" href="tables/email_addresses.html" target="_top" title="email_addresses" alt="" coords="60,11543,341,11817">
+<area shape="rect" id="node18" href="tables/enabled_modules.html" target="_top" title="enabled_modules" alt="" coords="57,11368,344,11525">
+<area shape="rect" id="node19" href="tables/enumerations.html" target="_top" title="enumerations" alt="" coords="69,11017,333,11351">
+<area shape="rect" id="node20" href="tables/groups_users.html" target="_top" title="groups_users" alt="" coords="95,10872,307,11000">
+<area shape="rect" id="node21" href="tables/import_items.html" target="_top" title="import_items" alt="" coords="74,10609,327,10855">
+<area shape="rect" id="node22" href="tables/imports.html" target="_top" title="imports" alt="" coords="81,10259,321,10592">
+<area shape="rect" id="node23" href="tables/issue_categories.html" target="_top" title="issue_categories" alt="" coords="66,10055,335,10241">
+<area shape="rect" id="node24" href="tables/issue_relations.html" target="_top" title="issue_relations" alt="" coords="67,9821,334,10037">
+<area shape="rect" id="node25" href="tables/issue_statuses.html" target="_top" title="issue_statuses" alt="" coords="52,9559,349,9804">
+<area shape="rect" id="node26" href="tables/issues.html" target="_top" title="issues" alt="" coords="29,8768,372,9541">
+<area shape="rect" id="node27" href="tables/journal_details.html" target="_top" title="journal_details" alt="" coords="37,8505,364,8751">
+<area shape="rect" id="node28" href="tables/journals.html" target="_top" title="journals" alt="" coords="30,8155,371,8488">
+<area shape="rect" id="node29" href="tables/member_roles.html" target="_top" title="member_roles" alt="" coords="87,7951,314,8137">
+<area shape="rect" id="node30" href="tables/members.html" target="_top" title="members" alt="" coords="51,7717,350,7933">
+<area shape="rect" id="node31" href="tables/messages.html" target="_top" title="messages" alt="" coords="72,7279,329,7700">
+<area shape="rect" id="node32" href="tables/news.html" target="_top" title="news" alt="" coords="51,6957,351,7261">
+<area shape="rect" id="node33" href="tables/projects.html" target="_top" title="projects" alt="" coords="29,6401,372,6940">
+<area shape="rect" id="node34" href="tables/projects_trackers.html" target="_top" title="projects_trackers" alt="" coords="78,6256,323,6384">
+<area shape="rect" id="node35" href="tables/queries.html" target="_top" title="queries" alt="" coords="67,5847,334,6239">
+<area shape="rect" id="node36" href="tables/queries_roles.html" target="_top" title="queries_roles" alt="" coords="94,5701,307,5829">
+<area shape="rect" id="node37" href="tables/repositories.html" target="_top" title="repositories" alt="" coords="38,5233,363,5684">
+<area shape="rect" id="node38" href="tables/roles.html" target="_top" title="roles" alt="" coords="7,4795,394,5216">
+<area shape="rect" id="node39" href="tables/roles_managed_roles.html" target="_top" title="roles_managed_roles" alt="" coords="64,4649,337,4777">
+<area shape="rect" id="node40" href="tables/schema_migrations.html" target="_top" title="schema_migrations" alt="" coords="49,4533,352,4632">
+<area shape="rect" id="node41" href="tables/settings.html" target="_top" title="settings" alt="" coords="72,4329,329,4516">
+<area shape="rect" id="node42" href="tables/time_entries.html" target="_top" title="time_entries" alt="" coords="73,3832,329,4312">
+<area shape="rect" id="node43" href="tables/tokens.html" target="_top" title="tokens" alt="" coords="72,3569,329,3815">
+<area shape="rect" id="node44" href="tables/trackers.html" target="_top" title="trackers" alt="" coords="59,3277,342,3552">
+<area shape="rect" id="node45" href="tables/user_preferences.html" target="_top" title="user_preferences" alt="" coords="59,3044,343,3260">
+<area shape="rect" id="node46" href="tables/users.html" target="_top" title="users" alt="" coords="23,2341,378,3027">
+<area shape="rect" id="node47" href="tables/versions.html" target="_top" title="versions" alt="" coords="60,1961,341,2324">
+<area shape="rect" id="node48" href="tables/watchers.html" target="_top" title="watchers" alt="" coords="64,1757,337,1944">
+<area shape="rect" id="node49" href="tables/wiki_content_versions.html" target="_top" title="wiki_content_versions" alt="" coords="5,1407,396,1740">
+<area shape="rect" id="node50" href="tables/wiki_contents.html" target="_top" title="wiki_contents" alt="" coords="41,1115,360,1389">
+<area shape="rect" id="node51" href="tables/wiki_pages.html" target="_top" title="wiki_pages" alt="" coords="81,852,320,1097">
+<area shape="rect" id="node52" href="tables/wiki_redirects.html" target="_top" title="wiki_redirects" alt="" coords="47,589,354,835">
+<area shape="rect" id="node53" href="tables/wikis.html" target="_top" title="wikis" alt="" coords="85,385,316,572">
+<area shape="rect" id="node54" href="tables/workflows.html" target="_top" title="workflows" alt="" coords="75,5,326,368">
+</map>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.3-SNAPSHOT</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src=""></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>
