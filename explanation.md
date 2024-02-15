@@ -31,8 +31,6 @@ SchemaSpy は、テーブルを指定すると、リレーション先の階層�
 
 [schemaspyを使用したdocker-composeファイルの例](MONICA/docker-compose-schemaspy.yml)
 
-    [aaa](https://github.com/kakisoft/variety-of-tables-scheme-documentations-using-schemaspy/blob/main/MONICA/docker-compose-schemaspy.yml)
-
 
 ## あまり活躍出来ない場面
 RDB上で外部キーを指定していない場合、リレーションが見えず、全て独立したテーブルと見なされる。  
