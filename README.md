@@ -1,7 +1,10 @@
 # variety-of-tables-scheme-documentations-using-schemaspy
-variety-of-tables-scheme-documentations-using-schemaspy
+This was created to study DB design from table schema of open source.  
 
+It will be updated for reference.  
 
-```
-docker-compose -f docker-compose-schemaspy.yml up
-```
+ * [MONICA](https://kakisoft.github.io/variety-of-tables-scheme-documentations-using-schemaspy/MONICA/db_docs/index.html)
+
+______________________________________________________________________
+
+These database documents are created with [SchemaSpy](https://schemaspy.org/).  

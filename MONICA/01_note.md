@@ -31,15 +31,5 @@ docker-compose -f docker-compose-schemaspy.yml down
 docker-compose -f docker-compose-schemaspy.yml down --rmi all --volumes
 ```
 
-
 ____________________________________________________________________________________
-
-
-
-docker network create shared-network-monica
-
-
-docker rm
-
-コンテナ名を付ける。
 
