@@ -7,8 +7,8 @@ It will be updated for reference.
  * [Redmine](https://kakisoft.github.io/variety-of-tables-scheme-documentations-using-schemaspy/Redmine/db_docs/index.html)
 
 
-##
-[xxxxxxxxxxxx](explanation.md)
+## Docs
+[SchemaSpyを使う事のメリット](explanation.md)
 
 
 ______________________________________________________________________
