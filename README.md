@@ -11,6 +11,10 @@ It will be updated for reference.
 [SchemaSpyを使う事のメリット](explanation.md)
 
 
+## See Also
+[variety-of-tables-scheme-documentations-using-tbls](https://github.com/kakisoft/variety-of-tables-scheme-documentations-using-tbls)
+
+
 ______________________________________________________________________
 
 These database documents are created with [SchemaSpy](https://schemaspy.org/).  
