@@ -21,6 +21,25 @@ docker-compose down --rmi all --volumes
 ```
 
 ## テーブル定義作成
- 1. ```.tbls.yml``` を作成
- 2. ```tbls doc``` を実行
+```
+docker-compose -f docker-compose-schemaspy.yml up
+```
+
+## テーブル作成用のコンテナを終了・削除
+```
+docker-compose -f docker-compose-schemaspy.yml down
+docker-compose -f docker-compose-schemaspy.yml down --rmi all --volumes
+```
+
+
+____________________________________________________________________________________
+
+
+
+docker network create shared-network-monica
+
+
+docker rm
+
+コンテナ名を付ける。
 

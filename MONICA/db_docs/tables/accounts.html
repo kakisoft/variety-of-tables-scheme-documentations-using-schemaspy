@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>accounts - monica.monica</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>monica</b></a><span class="navbar-brand" style="padding-left: 0">.monica</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>accounts</h1><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="false"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+                                    <td>INT UNSIGNED</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="activities.account_id references accounts.id via activities_account_id_foreign"><a href='activities.html'>activities</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">activities_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="activity_contact.account_id references accounts.id via activity_contact_account_id_foreign"><a href='activity_contact.html'>activity_contact</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">activity_contact_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="activity_statistics.account_id references accounts.id via activity_statistics_account_id_foreign"><a href='activity_statistics.html'>activity_statistics</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">activity_statistics_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="activity_type_categories.account_id references accounts.id via activity_type_categories_account_id_foreign"><a href='activity_type_categories.html'>activity_type_categories</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">activity_type_categories_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="activity_types.account_id references accounts.id via activity_types_account_id_foreign"><a href='activity_types.html'>activity_types</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">activity_types_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="address_contact_field_label.account_id references accounts.id via address_contact_field_label_account_id_foreign"><a href='address_contact_field_label.html'>address_contact_field_label</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">address_contact_field_label_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="addressbook_subscriptions.account_id references accounts.id via addressbook_subscriptions_account_id_foreign"><a href='addressbook_subscriptions.html'>addressbook_subscriptions</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">addressbook_subscriptions_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="addressbooks.account_id references accounts.id via addressbooks_account_id_foreign"><a href='addressbooks.html'>addressbooks</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">addressbooks_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="addresses.account_id references accounts.id via addresses_account_id_foreign"><a href='addresses.html'>addresses</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">addresses_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="audit_logs.account_id references accounts.id via audit_logs_account_id_foreign"><a href='audit_logs.html'>audit_logs</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">audit_logs_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="calls.account_id references accounts.id via calls_account_id_foreign"><a href='calls.html'>calls</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">calls_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="companies.account_id references accounts.id via companies_account_id_foreign"><a href='companies.html'>companies</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">companies_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="contact_field_contact_field_label.account_id references accounts.id via contact_field_contact_field_label_account_id_foreign"><a href='contact_field_contact_field_label.html'>contact_field_contact_field_label</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">contact_field_contact_field_label_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="contact_field_labels.account_id references accounts.id via contact_field_labels_account_id_foreign"><a href='contact_field_labels.html'>contact_field_labels</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">contact_field_labels_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="contact_field_types.account_id references accounts.id via contact_field_types_account_id_foreign"><a href='contact_field_types.html'>contact_field_types</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">contact_field_types_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="contact_fields.account_id references accounts.id via contact_fields_account_id_foreign"><a href='contact_fields.html'>contact_fields</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">contact_fields_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="contact_tag.account_id references accounts.id via contact_tag_account_id_foreign"><a href='contact_tag.html'>contact_tag</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">contact_tag_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="contacts.account_id references accounts.id via contacts_account_id_foreign"><a href='contacts.html'>contacts</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">contacts_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="conversations.account_id references accounts.id via conversations_account_id_foreign"><a href='conversations.html'>conversations</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">conversations_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="days.account_id references accounts.id via days_account_id_foreign"><a href='days.html'>days</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">days_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="debts.account_id references accounts.id via debts_account_id_foreign"><a href='debts.html'>debts</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">debts_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="documents.account_id references accounts.id via documents_account_id_foreign"><a href='documents.html'>documents</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">documents_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="emotion_activity.account_id references accounts.id via emotion_activity_account_id_foreign"><a href='emotion_activity.html'>emotion_activity</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">emotion_activity_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="emotion_call.account_id references accounts.id via emotion_call_account_id_foreign"><a href='emotion_call.html'>emotion_call</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">emotion_call_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="entries.account_id references accounts.id via entries_account_id_foreign"><a href='entries.html'>entries</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">entries_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="export_jobs.account_id references accounts.id via export_jobs_account_id_foreign"><a href='export_jobs.html'>export_jobs</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">export_jobs_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="genders.account_id references accounts.id via genders_account_id_foreign"><a href='genders.html'>genders</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">genders_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="gifts.account_id references accounts.id via gifts_account_id_foreign"><a href='gifts.html'>gifts</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">gifts_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="import_job_reports.account_id references accounts.id via import_job_reports_account_id_foreign"><a href='import_job_reports.html'>import_job_reports</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">import_job_reports_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="import_jobs.account_id references accounts.id via import_jobs_account_id_foreign"><a href='import_jobs.html'>import_jobs</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">import_jobs_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="invitations.account_id references accounts.id via invitations_account_id_foreign"><a href='invitations.html'>invitations</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">invitations_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="journal_entries.account_id references accounts.id via journal_entries_account_id_foreign"><a href='journal_entries.html'>journal_entries</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">journal_entries_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="life_event_categories.account_id references accounts.id via life_event_categories_account_id_foreign"><a href='life_event_categories.html'>life_event_categories</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">life_event_categories_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="life_event_types.account_id references accounts.id via life_event_types_account_id_foreign"><a href='life_event_types.html'>life_event_types</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">life_event_types_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="life_events.account_id references accounts.id via life_events_account_id_foreign"><a href='life_events.html'>life_events</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">life_events_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="messages.account_id references accounts.id via messages_account_id_foreign"><a href='messages.html'>messages</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">messages_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="metadata_love_relationships.account_id references accounts.id via metadata_love_relationships_account_id_foreign"><a href='metadata_love_relationships.html'>metadata_love_relationships</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">metadata_love_relationships_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="modules.account_id references accounts.id via modules_account_id_foreign"><a href='modules.html'>modules</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">modules_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="notes.account_id references accounts.id via notes_account_id_foreign"><a href='notes.html'>notes</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">notes_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="occupations.account_id references accounts.id via occupations_account_id_foreign"><a href='occupations.html'>occupations</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">occupations_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pets.account_id references accounts.id via pets_account_id_foreign"><a href='pets.html'>pets</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">pets_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="photos.account_id references accounts.id via photos_account_id_foreign"><a href='photos.html'>photos</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">photos_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="places.account_id references accounts.id via places_account_id_foreign"><a href='places.html'>places</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">places_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="recovery_codes.account_id references accounts.id via recovery_codes_account_id_foreign"><a href='recovery_codes.html'>recovery_codes</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">recovery_codes_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="relationship_type_groups.account_id references accounts.id via relationship_type_groups_account_id_foreign"><a href='relationship_type_groups.html'>relationship_type_groups</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">relationship_type_groups_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="relationship_types.account_id references accounts.id via relationship_types_account_id_foreign"><a href='relationship_types.html'>relationship_types</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">relationship_types_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="relationships.account_id references accounts.id via relationships_account_id_foreign"><a href='relationships.html'>relationships</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">relationships_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="reminder_outbox.account_id references accounts.id via reminder_outbox_account_id_foreign"><a href='reminder_outbox.html'>reminder_outbox</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">reminder_outbox_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="reminder_rules.account_id references accounts.id via reminder_rules_account_id_foreign"><a href='reminder_rules.html'>reminder_rules</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">reminder_rules_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="reminders.account_id references accounts.id via reminders_account_id_foreign"><a href='reminders.html'>reminders</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">reminders_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="special_dates.account_id references accounts.id via special_dates_account_id_foreign"><a href='special_dates.html'>special_dates</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">special_dates_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="synctoken.account_id references accounts.id via synctoken_account_id_foreign"><a href='synctoken.html'>synctoken</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">synctoken_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="tags.account_id references accounts.id via tags_account_id_foreign"><a href='tags.html'>tags</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">tags_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="tasks.account_id references accounts.id via tasks_account_id_foreign"><a href='tasks.html'>tasks</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">tasks_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="term_user.account_id references accounts.id via term_user_account_id_foreign"><a href='term_user.html'>term_user</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">term_user_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="users.account_id references accounts.id via users_account_id_foreign"><a href='users.html'>users</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">users_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="weather.account_id references accounts.id via weather_account_id_foreign"><a href='weather.html'>weather</a><span class='relatedKey'>.account_id</span></td>
+                                                <td class="constraint detail">weather_account_id_foreign</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="uuid">uuid</span></td>
+                                    <td>CHAR</td>
+                                    <td>36</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="has_access_to_paid_version_for_free">has_access_to_paid_version_for_free</span></td>
+                                    <td>BIT</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>0</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="api_key">api_key</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="number_of_invitations_sent">number_of_invitations_sent</span></td>
+                                    <td>INT</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="default_time_reminder_is_sent">default_time_reminder_is_sent</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>12:00</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="default_gender_id">default_gender_id</span></td>
+                                    <td>INT UNSIGNED</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="accounts.default_gender_id references genders.id via accounts_default_gender_id_foreign"><a href='genders.html'>genders</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">accounts_default_gender_id_foreign</td>
+                                                <td class="constraint detail"><span title='Null on delete:&#10;Foreign key to parent set to NULL when parent deleted'>N</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="stripe_id">stripe_id</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="accounts.stripe_id&#39;s name implies that it&#39;s a child of job_batches.id, but it doesn&#39;t reference that column."><a href='job_batches.html'>job_batches</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="pm_type">pm_type</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="pm_last_four">pm_last_four</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>4</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="trial_ends_at">trial_ends_at</span></td>
+                                    <td>TIMESTAMP</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="legacy_free_plan_unlimited_contacts">legacy_free_plan_unlimited_contacts</span></td>
+                                    <td>BIT</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>0</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="created_at">created_at</span></td>
+                                    <td>TIMESTAMP</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="updated_at">updated_at</span></td>
+                                    <td>TIMESTAMP</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="false"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PRIMARY</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>accounts_default_gender_id_foreign</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>default_gender_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>accounts_stripe_id_index</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>stripe_id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>accounts_uuid_index</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>uuid</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="accounts.html" target="_top" title="accounts" alt="" coords="201,2799,665,3279">
+<area shape="rect" id="node2" href="genders.html" target="_top" title="genders" alt="" coords="14,2860,157,3036">
+<area shape="rect" id="node3" href="activities.html" target="_top" title="activities" alt="" coords="1486,64,1658,270">
+<area shape="rect" id="node4" href="activity_types.html" target="_top" title="activity_types" alt="" coords="1100,124,1348,330">
+<area shape="rect" id="node8" href="activity_type_categories.html" target="_top" title="activity_type_categories" alt="" coords="736,160,1006,336">
+<area shape="rect" id="node5" href="activity_contact.html" target="_top" title="activity_contact" alt="" coords="1817,40,2024,192">
+<area shape="rect" id="node6" href="contacts.html" target="_top" title="contacts" alt="" coords="1432,2931,1712,3342">
+<area shape="rect" id="node13" href="addressbooks.html" target="_top" title="addressbooks" alt="" coords="1129,2162,1318,2396">
+<area shape="rect" id="node24" href="photos.html" target="_top" title="photos" alt="" coords="778,3232,964,3408">
+<area shape="rect" id="node25" href="reminders.html" target="_top" title="reminders" alt="" coords="1124,3195,1324,3400">
+<area shape="rect" id="node26" href="special_dates.html" target="_top" title="special_dates" alt="" coords="1131,2972,1316,3178">
+<area shape="rect" id="node7" href="activity_statistics.html" target="_top" title="activity_statistics" alt="" coords="1811,1570,2030,1746">
+<area shape="rect" id="node9" href="address_contact_field_label.html" target="_top" title="address_contact_field_label" alt="" coords="2132,556,2428,708">
+<area shape="rect" id="node10" href="addresses.html" target="_top" title="addresses" alt="" coords="1841,403,2000,638">
+<area shape="rect" id="node11" href="contact_field_labels.html" target="_top" title="contact_field_labels" alt="" coords="1802,3986,2038,4191">
+<area shape="rect" id="node15" href="places.html" target="_top" title="places" alt="" coords="800,491,942,638">
+<area shape="rect" id="node12" href="addressbook_subscriptions.html" target="_top" title="addressbook_subscriptions" alt="" coords="1424,1480,1720,1715">
+<area shape="rect" id="node14" href="users.html" target="_top" title="users" alt="" coords="709,1476,1033,1770">
+<area shape="rect" id="node16" href="audit_logs.html" target="_top" title="audit_logs" alt="" coords="1778,1311,2062,1516">
+<area shape="rect" id="node17" href="calls.html" target="_top" title="calls" alt="" coords="1839,1956,2002,2162">
+<area shape="rect" id="node18" href="companies.html" target="_top" title="companies" alt="" coords="1458,4251,1686,4398">
+<area shape="rect" id="node19" href="contact_field_contact_field_label.html" target="_top" title="contact_field_contact_field_label" alt="" coords="2112,5007,2448,5159">
+<area shape="rect" id="node20" href="contact_fields.html" target="_top" title="contact_fields" alt="" coords="1813,5036,2028,5271">
+<area shape="rect" id="node21" href="contact_field_types.html" target="_top" title="contact_field_types" alt="" coords="1456,4476,1688,4652">
+<area shape="rect" id="node22" href="contact_tag.html" target="_top" title="contact_tag" alt="" coords="1834,1763,2006,1939">
+<area shape="rect" id="node23" href="tags.html" target="_top" title="tags" alt="" coords="1502,2430,1641,2576">
+<area shape="rect" id="node27" href="conversations.html" target="_top" title="conversations" alt="" coords="1813,4467,2028,4702">
+<area shape="rect" id="node28" href="days.html" target="_top" title="days" alt="" coords="802,2594,940,2770">
+<area shape="rect" id="node29" href="debts.html" target="_top" title="debts" alt="" coords="1850,2179,1991,2414">
+<area shape="rect" id="node30" href="documents.html" target="_top" title="documents" alt="" coords="1806,2431,2034,2636">
+<area shape="rect" id="node31" href="emotion_activity.html" target="_top" title="emotion_activity" alt="" coords="1814,210,2027,386">
+<area shape="rect" id="node32" href="emotion_call.html" target="_top" title="emotion_call" alt="" coords="2189,1927,2370,2132">
+<area shape="rect" id="node33" href="entries.html" target="_top" title="entries" alt="" coords="802,2931,940,3107">
+<area shape="rect" id="node34" href="export_jobs.html" target="_top" title="export_jobs" alt="" coords="1138,992,1310,1198">
+<area shape="rect" id="node35" href="gifts.html" target="_top" title="gifts" alt="" coords="1850,2654,1991,2918">
+<area shape="rect" id="node36" href="import_job_reports.html" target="_top" title="import_job_reports" alt="" coords="1456,727,1687,932">
+<area shape="rect" id="node37" href="import_jobs.html" target="_top" title="import_jobs" alt="" coords="1124,763,1323,939">
+<area shape="rect" id="node38" href="invitations.html" target="_top" title="invitations" alt="" coords="1127,1215,1320,1391">
+<area shape="rect" id="node39" href="journal_entries.html" target="_top" title="journal_entries" alt="" coords="771,3462,971,3608">
+<area shape="rect" id="node40" href="life_event_categories.html" target="_top" title="life_event_categories" alt="" coords="720,3734,1022,3910">
+<area shape="rect" id="node41" href="life_event_types.html" target="_top" title="life_event_types" alt="" coords="1077,3698,1370,3903">
+<area shape="rect" id="node42" href="life_events.html" target="_top" title="life_events" alt="" coords="1773,3007,2068,3271">
+<area shape="rect" id="node43" href="messages.html" target="_top" title="messages" alt="" coords="2192,4110,2367,4344">
+<area shape="rect" id="node44" href="metadata_love_relationships.html" target="_top" title="metadata_love_relationships" alt="" coords="2125,4672,2434,4848">
+<area shape="rect" id="node45" href="relationships.html" target="_top" title="relationships" alt="" coords="1816,4755,2025,5019">
+<area shape="rect" id="node52" href="relationship_types.html" target="_top" title="relationship_types" alt="" coords="1092,4843,1356,5019">
+<area shape="rect" id="node46" href="modules.html" target="_top" title="modules" alt="" coords="784,3999,958,4146">
+<area shape="rect" id="node47" href="notes.html" target="_top" title="notes" alt="" coords="1848,3288,1993,3494">
+<area shape="rect" id="node48" href="occupations.html" target="_top" title="occupations" alt="" coords="1810,4244,2031,4450">
+<area shape="rect" id="node49" href="pets.html" target="_top" title="pets" alt="" coords="1834,3511,2007,3746">
+<area shape="rect" id="node50" href="recovery_codes.html" target="_top" title="recovery_codes" alt="" coords="1123,1552,1324,1728">
+<area shape="rect" id="node51" href="relationship_type_groups.html" target="_top" title="relationship_type_groups" alt="" coords="731,4942,1011,5118">
+<area shape="rect" id="node53" href="reminder_outbox.html" target="_top" title="reminder_outbox" alt="" coords="1414,2135,1729,2340">
+<area shape="rect" id="node54" href="reminder_rules.html" target="_top" title="reminder_rules" alt="" coords="752,4742,990,4888">
+<area shape="rect" id="node55" href="synctoken.html" target="_top" title="synctoken" alt="" coords="1143,1746,1304,1951">
+<area shape="rect" id="node56" href="tasks.html" target="_top" title="tasks" alt="" coords="1842,3763,1999,3968">
+<area shape="rect" id="node57" href="term_user.html" target="_top" title="term_user" alt="" coords="1144,1968,1304,2144">
+<area shape="rect" id="node58" href="weather.html" target="_top" title="weather" alt="" coords="1146,426,1302,602">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/accounts.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="accounts.html" target="_top" title="accounts" alt="" coords="201,1358,665,1838">
+<area shape="rect" id="node2" href="genders.html" target="_top" title="genders" alt="" coords="14,1419,157,1595">
+<area shape="rect" id="node3" href="activities.html" target="_top" title="activities" alt="" coords="1376,634,1528,722">
+<area shape="rect" id="node4" href="activity_types.html" target="_top" title="activity_types" alt="" coords="1052,667,1241,755">
+<area shape="rect" id="node8" href="activity_type_categories.html" target="_top" title="activity_type_categories" alt="" coords="714,667,984,755">
+<area shape="rect" id="node5" href="activity_contact.html" target="_top" title="activity_contact" alt="" coords="1658,567,1865,655">
+<area shape="rect" id="node6" href="contacts.html" target="_top" title="contacts" alt="" coords="1378,1541,1526,1629">
+<area shape="rect" id="node13" href="addressbooks.html" target="_top" title="addressbooks" alt="" coords="1052,1967,1241,2055">
+<area shape="rect" id="node23" href="photos.html" target="_top" title="photos" alt="" coords="1079,1685,1214,1773">
+<area shape="rect" id="node26" href="reminders.html" target="_top" title="reminders" alt="" coords="1066,2389,1227,2477">
+<area shape="rect" id="node27" href="special_dates.html" target="_top" title="special_dates" alt="" coords="1054,1402,1239,1490">
+<area shape="rect" id="node7" href="activity_statistics.html" target="_top" title="activity_statistics" alt="" coords="1652,1061,1871,1149">
+<area shape="rect" id="node9" href="address_contact_field_label.html" target="_top" title="address_contact_field_label" alt="" coords="1944,206,2240,294">
+<area shape="rect" id="node10" href="addresses.html" target="_top" title="addresses" alt="" coords="1682,206,1841,294">
+<area shape="rect" id="node11" href="contact_field_labels.html" target="_top" title="contact_field_labels" alt="" coords="1644,313,1880,401">
+<area shape="rect" id="node15" href="places.html" target="_top" title="places" alt="" coords="784,241,914,329">
+<area shape="rect" id="node12" href="addressbook_subscriptions.html" target="_top" title="addressbook_subscriptions" alt="" coords="1304,2566,1600,2654">
+<area shape="rect" id="node14" href="users.html" target="_top" title="users" alt="" coords="788,2293,910,2381">
+<area shape="rect" id="node31" href="currencies.html" target="_top" title="currencies" alt="" coords="352,3191,514,3279">
+<area shape="rect" id="node16" href="audit_logs.html" target="_top" title="audit_logs" alt="" coords="1682,2495,1842,2583">
+<area shape="rect" id="node17" href="calls.html" target="_top" title="calls" alt="" coords="1704,1413,1819,1501">
+<area shape="rect" id="node18" href="companies.html" target="_top" title="companies" alt="" coords="1369,27,1534,115">
+<area shape="rect" id="node19" href="contact_field_contact_field_label.html" target="_top" title="contact_field_contact_field_label" alt="" coords="1924,779,2260,867">
+<area shape="rect" id="node20" href="contact_fields.html" target="_top" title="contact_fields" alt="" coords="1667,955,1856,1043">
+<area shape="rect" id="node21" href="contact_field_types.html" target="_top" title="contact_field_types" alt="" coords="1336,1294,1568,1382">
+<area shape="rect" id="node22" href="contact_photo.html" target="_top" title="contact_photo" alt="" coords="1665,1695,1858,1783">
+<area shape="rect" id="node24" href="contact_tag.html" target="_top" title="contact_tag" alt="" coords="1676,1166,1848,1254">
+<area shape="rect" id="node25" href="tags.html" target="_top" title="tags" alt="" coords="1395,1025,1508,1113">
+<area shape="rect" id="node28" href="conversations.html" target="_top" title="conversations" alt="" coords="1666,1590,1858,1678">
+<area shape="rect" id="node29" href="days.html" target="_top" title="days" alt="" coords="780,1526,918,1702">
+<area shape="rect" id="node30" href="debts.html" target="_top" title="debts" alt="" coords="1700,3371,1824,3459">
+<area shape="rect" id="node32" href="documents.html" target="_top" title="documents" alt="" coords="1677,1307,1846,1395">
+<area shape="rect" id="node33" href="emotion_activity.html" target="_top" title="emotion_activity" alt="" coords="1655,673,1868,761">
+<area shape="rect" id="node34" href="emotions.html" target="_top" title="emotions" alt="" coords="1374,775,1529,863">
+<area shape="rect" id="node35" href="emotion_call.html" target="_top" title="emotion_call" alt="" coords="2001,1325,2182,1413">
+<area shape="rect" id="node36" href="entries.html" target="_top" title="entries" alt="" coords="780,1827,918,2003">
+<area shape="rect" id="node37" href="export_jobs.html" target="_top" title="export_jobs" alt="" coords="1060,1826,1232,1914">
+<area shape="rect" id="node38" href="gift_photo.html" target="_top" title="gift_photo" alt="" coords="2012,1799,2172,1887">
+<area shape="rect" id="node39" href="gifts.html" target="_top" title="gifts" alt="" coords="1704,1837,1819,1925">
+<area shape="rect" id="node40" href="import_job_reports.html" target="_top" title="import_job_reports" alt="" coords="1336,1435,1567,1523">
+<area shape="rect" id="node41" href="import_jobs.html" target="_top" title="import_jobs" alt="" coords="1060,1543,1233,1631">
+<area shape="rect" id="node42" href="invitations.html" target="_top" title="invitations" alt="" coords="1064,2073,1229,2161">
+<area shape="rect" id="node43" href="journal_entries.html" target="_top" title="journal_entries" alt="" coords="749,2129,949,2275">
+<area shape="rect" id="node44" href="life_event_categories.html" target="_top" title="life_event_categories" alt="" coords="726,3265,972,3353">
+<area shape="rect" id="node45" href="life_event_types.html" target="_top" title="life_event_types" alt="" coords="1043,3158,1250,3246">
+<area shape="rect" id="node46" href="life_events.html" target="_top" title="life_events" alt="" coords="1679,2977,1844,3065">
+<area shape="rect" id="node47" href="messages.html" target="_top" title="messages" alt="" coords="2014,1590,2170,1678">
+<area shape="rect" id="node48" href="metadata_love_relationships.html" target="_top" title="metadata_love_relationships" alt="" coords="1937,422,2246,510">
+<area shape="rect" id="node49" href="relationships.html" target="_top" title="relationships" alt="" coords="1670,462,1854,550">
+<area shape="rect" id="node57" href="relationship_types.html" target="_top" title="relationship_types" alt="" coords="1033,462,1260,550">
+<area shape="rect" id="node50" href="modules.html" target="_top" title="modules" alt="" coords="762,2685,936,2831">
+<area shape="rect" id="node51" href="notes.html" target="_top" title="notes" alt="" coords="1700,3182,1824,3270">
+<area shape="rect" id="node52" href="occupations.html" target="_top" title="occupations" alt="" coords="1674,63,1850,151">
+<area shape="rect" id="node53" href="pets.html" target="_top" title="pets" alt="" coords="1705,2854,1818,2942">
+<area shape="rect" id="node54" href="pet_categories.html" target="_top" title="pet_categories" alt="" coords="1354,2851,1549,2939">
+<area shape="rect" id="node55" href="recovery_codes.html" target="_top" title="recovery_codes" alt="" coords="1046,2178,1247,2266">
+<area shape="rect" id="node56" href="relationship_type_groups.html" target="_top" title="relationship_type_groups" alt="" coords="709,490,989,578">
+<area shape="rect" id="node58" href="reminder_outbox.html" target="_top" title="reminder_outbox" alt="" coords="1343,2425,1560,2513">
+<area shape="rect" id="node59" href="reminder_rules.html" target="_top" title="reminder_rules" alt="" coords="730,3029,968,3175">
+<area shape="rect" id="node60" href="synctoken.html" target="_top" title="synctoken" alt="" coords="1066,2283,1227,2371">
+<area shape="rect" id="node61" href="tasks.html" target="_top" title="tasks" alt="" coords="1701,850,1822,938">
+<area shape="rect" id="node62" href="term_user.html" target="_top" title="term_user" alt="" coords="1066,1117,1226,1205">
+<area shape="rect" id="node63" href="terms.html" target="_top" title="terms" alt="" coords="786,1097,912,1185">
+<area shape="rect" id="node64" href="u2f_key.html" target="_top" title="u2f_key" alt="" coords="1076,2707,1216,2795">
+<area shape="rect" id="node65" href="weather.html" target="_top" title="weather" alt="" coords="1073,277,1220,365">
+<area shape="rect" id="node66" href="webauthn_keys.html" target="_top" title="webauthn_keys" alt="" coords="1044,2602,1248,2690">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/accounts.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="accounts.html" target="_top" title="accounts" alt="" coords="223,2799,687,3279">
+<area shape="rect" id="node2" href="genders.html" target="_top" title="genders" alt="" coords="21,2778,163,2954">
+<area shape="rect" id="node3" href="job_batches.html" target="_top" title="job_batches" alt="" coords="5,3007,179,3124">
+<area shape="rect" id="node4" href="activities.html" target="_top" title="activities" alt="" coords="1507,64,1679,270">
+<area shape="rect" id="node5" href="activity_types.html" target="_top" title="activity_types" alt="" coords="1121,124,1369,330">
+<area shape="rect" id="node9" href="activity_type_categories.html" target="_top" title="activity_type_categories" alt="" coords="757,160,1028,336">
+<area shape="rect" id="node6" href="activity_contact.html" target="_top" title="activity_contact" alt="" coords="1839,40,2045,192">
+<area shape="rect" id="node7" href="contacts.html" target="_top" title="contacts" alt="" coords="1453,2931,1733,3342">
+<area shape="rect" id="node14" href="addressbooks.html" target="_top" title="addressbooks" alt="" coords="1151,2162,1340,2396">
+<area shape="rect" id="node25" href="photos.html" target="_top" title="photos" alt="" coords="799,3232,986,3408">
+<area shape="rect" id="node26" href="reminders.html" target="_top" title="reminders" alt="" coords="1145,3195,1345,3400">
+<area shape="rect" id="node27" href="special_dates.html" target="_top" title="special_dates" alt="" coords="1153,2972,1338,3178">
+<area shape="rect" id="node8" href="activity_statistics.html" target="_top" title="activity_statistics" alt="" coords="1833,1570,2051,1746">
+<area shape="rect" id="node10" href="address_contact_field_label.html" target="_top" title="address_contact_field_label" alt="" coords="2153,556,2449,708">
+<area shape="rect" id="node11" href="addresses.html" target="_top" title="addresses" alt="" coords="1863,403,2021,638">
+<area shape="rect" id="node12" href="contact_field_labels.html" target="_top" title="contact_field_labels" alt="" coords="1824,3986,2060,4191">
+<area shape="rect" id="node16" href="places.html" target="_top" title="places" alt="" coords="821,491,964,638">
+<area shape="rect" id="node13" href="addressbook_subscriptions.html" target="_top" title="addressbook_subscriptions" alt="" coords="1445,1480,1741,1715">
+<area shape="rect" id="node15" href="users.html" target="_top" title="users" alt="" coords="731,1476,1055,1770">
+<area shape="rect" id="node17" href="audit_logs.html" target="_top" title="audit_logs" alt="" coords="1800,1311,2084,1516">
+<area shape="rect" id="node18" href="calls.html" target="_top" title="calls" alt="" coords="1861,1956,2023,2162">
+<area shape="rect" id="node19" href="companies.html" target="_top" title="companies" alt="" coords="1479,4251,1707,4398">
+<area shape="rect" id="node20" href="contact_field_contact_field_label.html" target="_top" title="contact_field_contact_field_label" alt="" coords="2133,5007,2469,5159">
+<area shape="rect" id="node21" href="contact_fields.html" target="_top" title="contact_fields" alt="" coords="1835,5036,2049,5271">
+<area shape="rect" id="node22" href="contact_field_types.html" target="_top" title="contact_field_types" alt="" coords="1477,4476,1709,4652">
+<area shape="rect" id="node23" href="contact_tag.html" target="_top" title="contact_tag" alt="" coords="1856,1763,2028,1939">
+<area shape="rect" id="node24" href="tags.html" target="_top" title="tags" alt="" coords="1524,2430,1663,2576">
+<area shape="rect" id="node28" href="conversations.html" target="_top" title="conversations" alt="" coords="1835,4467,2049,4702">
+<area shape="rect" id="node29" href="days.html" target="_top" title="days" alt="" coords="823,2594,962,2770">
+<area shape="rect" id="node30" href="debts.html" target="_top" title="debts" alt="" coords="1871,2179,2013,2414">
+<area shape="rect" id="node31" href="documents.html" target="_top" title="documents" alt="" coords="1828,2431,2056,2636">
+<area shape="rect" id="node32" href="emotion_activity.html" target="_top" title="emotion_activity" alt="" coords="1835,210,2049,386">
+<area shape="rect" id="node33" href="emotion_call.html" target="_top" title="emotion_call" alt="" coords="2211,1927,2392,2132">
+<area shape="rect" id="node34" href="entries.html" target="_top" title="entries" alt="" coords="823,2931,962,3107">
+<area shape="rect" id="node35" href="export_jobs.html" target="_top" title="export_jobs" alt="" coords="1159,992,1331,1198">
+<area shape="rect" id="node36" href="gifts.html" target="_top" title="gifts" alt="" coords="1871,2654,2013,2918">
+<area shape="rect" id="node37" href="import_job_reports.html" target="_top" title="import_job_reports" alt="" coords="1478,727,1709,932">
+<area shape="rect" id="node38" href="import_jobs.html" target="_top" title="import_jobs" alt="" coords="1146,763,1345,939">
+<area shape="rect" id="node39" href="invitations.html" target="_top" title="invitations" alt="" coords="1149,1215,1342,1391">
+<area shape="rect" id="node40" href="journal_entries.html" target="_top" title="journal_entries" alt="" coords="793,3462,993,3608">
+<area shape="rect" id="node41" href="life_event_categories.html" target="_top" title="life_event_categories" alt="" coords="742,3734,1043,3910">
+<area shape="rect" id="node42" href="life_event_types.html" target="_top" title="life_event_types" alt="" coords="1099,3698,1392,3903">
+<area shape="rect" id="node43" href="life_events.html" target="_top" title="life_events" alt="" coords="1795,3007,2089,3271">
+<area shape="rect" id="node44" href="messages.html" target="_top" title="messages" alt="" coords="2214,4110,2389,4344">
+<area shape="rect" id="node45" href="metadata_love_relationships.html" target="_top" title="metadata_love_relationships" alt="" coords="2147,4672,2456,4848">
+<area shape="rect" id="node46" href="relationships.html" target="_top" title="relationships" alt="" coords="1837,4755,2047,5019">
+<area shape="rect" id="node53" href="relationship_types.html" target="_top" title="relationship_types" alt="" coords="1113,4843,1377,5019">
+<area shape="rect" id="node47" href="modules.html" target="_top" title="modules" alt="" coords="806,3999,979,4146">
+<area shape="rect" id="node48" href="notes.html" target="_top" title="notes" alt="" coords="1869,3288,2015,3494">
+<area shape="rect" id="node49" href="occupations.html" target="_top" title="occupations" alt="" coords="1831,4244,2053,4450">
+<area shape="rect" id="node50" href="pets.html" target="_top" title="pets" alt="" coords="1855,3511,2029,3746">
+<area shape="rect" id="node51" href="recovery_codes.html" target="_top" title="recovery_codes" alt="" coords="1145,1552,1346,1728">
+<area shape="rect" id="node52" href="relationship_type_groups.html" target="_top" title="relationship_type_groups" alt="" coords="753,4942,1033,5118">
+<area shape="rect" id="node54" href="reminder_outbox.html" target="_top" title="reminder_outbox" alt="" coords="1436,2135,1751,2340">
+<area shape="rect" id="node55" href="reminder_rules.html" target="_top" title="reminder_rules" alt="" coords="774,4742,1011,4888">
+<area shape="rect" id="node56" href="synctoken.html" target="_top" title="synctoken" alt="" coords="1165,1746,1326,1951">
+<area shape="rect" id="node57" href="tasks.html" target="_top" title="tasks" alt="" coords="1863,3763,2021,3968">
+<area shape="rect" id="node58" href="term_user.html" target="_top" title="term_user" alt="" coords="1165,1968,1325,2144">
+<area shape="rect" id="node59" href="weather.html" target="_top" title="weather" alt="" coords="1167,426,1323,602">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/accounts.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="accounts.html" target="_top" title="accounts" alt="" coords="223,1358,687,1838">
+<area shape="rect" id="node2" href="genders.html" target="_top" title="genders" alt="" coords="21,1419,163,1595">
+<area shape="rect" id="node3" href="job_batches.html" target="_top" title="job_batches" alt="" coords="5,1905,179,2022">
+<area shape="rect" id="node4" href="activities.html" target="_top" title="activities" alt="" coords="1397,634,1549,722">
+<area shape="rect" id="node5" href="activity_types.html" target="_top" title="activity_types" alt="" coords="1073,667,1263,755">
+<area shape="rect" id="node9" href="activity_type_categories.html" target="_top" title="activity_type_categories" alt="" coords="735,667,1006,755">
+<area shape="rect" id="node6" href="activity_contact.html" target="_top" title="activity_contact" alt="" coords="1680,575,1887,663">
+<area shape="rect" id="node7" href="contacts.html" target="_top" title="contacts" alt="" coords="1399,1541,1547,1629">
+<area shape="rect" id="node14" href="addressbooks.html" target="_top" title="addressbooks" alt="" coords="1073,1967,1263,2055">
+<area shape="rect" id="node24" href="photos.html" target="_top" title="photos" alt="" coords="1101,1685,1235,1773">
+<area shape="rect" id="node27" href="reminders.html" target="_top" title="reminders" alt="" coords="1087,2389,1249,2477">
+<area shape="rect" id="node28" href="special_dates.html" target="_top" title="special_dates" alt="" coords="1075,1402,1261,1490">
+<area shape="rect" id="node8" href="activity_statistics.html" target="_top" title="activity_statistics" alt="" coords="1674,1069,1893,1157">
+<area shape="rect" id="node10" href="address_contact_field_label.html" target="_top" title="address_contact_field_label" alt="" coords="1965,206,2261,294">
+<area shape="rect" id="node11" href="addresses.html" target="_top" title="addresses" alt="" coords="1704,206,1863,294">
+<area shape="rect" id="node12" href="contact_field_labels.html" target="_top" title="contact_field_labels" alt="" coords="1665,313,1901,401">
+<area shape="rect" id="node16" href="places.html" target="_top" title="places" alt="" coords="806,241,935,329">
+<area shape="rect" id="node13" href="addressbook_subscriptions.html" target="_top" title="addressbook_subscriptions" alt="" coords="1325,2566,1621,2654">
+<area shape="rect" id="node15" href="users.html" target="_top" title="users" alt="" coords="809,2293,932,2381">
+<area shape="rect" id="node32" href="currencies.html" target="_top" title="currencies" alt="" coords="373,3191,536,3279">
+<area shape="rect" id="node17" href="audit_logs.html" target="_top" title="audit_logs" alt="" coords="1703,2495,1863,2583">
+<area shape="rect" id="node18" href="calls.html" target="_top" title="calls" alt="" coords="1726,1421,1841,1509">
+<area shape="rect" id="node19" href="companies.html" target="_top" title="companies" alt="" coords="1391,27,1556,115">
+<area shape="rect" id="node20" href="contact_field_contact_field_label.html" target="_top" title="contact_field_contact_field_label" alt="" coords="1945,787,2281,875">
+<area shape="rect" id="node21" href="contact_fields.html" target="_top" title="contact_fields" alt="" coords="1689,963,1878,1051">
+<area shape="rect" id="node22" href="contact_field_types.html" target="_top" title="contact_field_types" alt="" coords="1357,1294,1589,1382">
+<area shape="rect" id="node23" href="contact_photo.html" target="_top" title="contact_photo" alt="" coords="1687,1703,1880,1791">
+<area shape="rect" id="node25" href="contact_tag.html" target="_top" title="contact_tag" alt="" coords="1697,1174,1869,1262">
+<area shape="rect" id="node26" href="tags.html" target="_top" title="tags" alt="" coords="1417,1025,1530,1113">
+<area shape="rect" id="node29" href="conversations.html" target="_top" title="conversations" alt="" coords="1687,1598,1879,1686">
+<area shape="rect" id="node30" href="days.html" target="_top" title="days" alt="" coords="801,1526,940,1702">
+<area shape="rect" id="node31" href="debts.html" target="_top" title="debts" alt="" coords="1721,3371,1845,3459">
+<area shape="rect" id="node33" href="documents.html" target="_top" title="documents" alt="" coords="1699,1315,1868,1403">
+<area shape="rect" id="node34" href="emotion_activity.html" target="_top" title="emotion_activity" alt="" coords="1677,681,1890,769">
+<area shape="rect" id="node35" href="emotions.html" target="_top" title="emotions" alt="" coords="1396,775,1551,863">
+<area shape="rect" id="node36" href="emotion_call.html" target="_top" title="emotion_call" alt="" coords="2023,1333,2204,1421">
+<area shape="rect" id="node37" href="entries.html" target="_top" title="entries" alt="" coords="801,1827,940,2003">
+<area shape="rect" id="node38" href="export_jobs.html" target="_top" title="export_jobs" alt="" coords="1082,1826,1254,1914">
+<area shape="rect" id="node39" href="gift_photo.html" target="_top" title="gift_photo" alt="" coords="2033,1807,2193,1895">
+<area shape="rect" id="node40" href="gifts.html" target="_top" title="gifts" alt="" coords="1726,1845,1841,1933">
+<area shape="rect" id="node41" href="import_job_reports.html" target="_top" title="import_job_reports" alt="" coords="1358,1435,1589,1523">
+<area shape="rect" id="node42" href="import_jobs.html" target="_top" title="import_jobs" alt="" coords="1081,1543,1255,1631">
+<area shape="rect" id="node43" href="invitations.html" target="_top" title="invitations" alt="" coords="1085,2073,1251,2161">
+<area shape="rect" id="node44" href="journal_entries.html" target="_top" title="journal_entries" alt="" coords="771,2129,971,2275">
+<area shape="rect" id="node45" href="life_event_categories.html" target="_top" title="life_event_categories" alt="" coords="747,3265,994,3353">
+<area shape="rect" id="node46" href="life_event_types.html" target="_top" title="life_event_types" alt="" coords="1065,3158,1271,3246">
+<area shape="rect" id="node47" href="life_events.html" target="_top" title="life_events" alt="" coords="1701,2977,1866,3065">
+<area shape="rect" id="node48" href="messages.html" target="_top" title="messages" alt="" coords="2035,1598,2191,1686">
+<area shape="rect" id="node49" href="metadata_love_relationships.html" target="_top" title="metadata_love_relationships" alt="" coords="1959,426,2268,514">
+<area shape="rect" id="node50" href="relationships.html" target="_top" title="relationships" alt="" coords="1691,470,1875,558">
+<area shape="rect" id="node58" href="relationship_types.html" target="_top" title="relationship_types" alt="" coords="1055,470,1281,558">
+<area shape="rect" id="node51" href="modules.html" target="_top" title="modules" alt="" coords="784,2685,957,2831">
+<area shape="rect" id="node52" href="notes.html" target="_top" title="notes" alt="" coords="1721,3182,1845,3270">
+<area shape="rect" id="node53" href="occupations.html" target="_top" title="occupations" alt="" coords="1695,63,1871,151">
+<area shape="rect" id="node54" href="pets.html" target="_top" title="pets" alt="" coords="1727,2854,1840,2942">
+<area shape="rect" id="node55" href="pet_categories.html" target="_top" title="pet_categories" alt="" coords="1376,2851,1571,2939">
+<area shape="rect" id="node56" href="recovery_codes.html" target="_top" title="recovery_codes" alt="" coords="1067,2178,1269,2266">
+<area shape="rect" id="node57" href="relationship_type_groups.html" target="_top" title="relationship_type_groups" alt="" coords="731,490,1011,578">
+<area shape="rect" id="node59" href="reminder_outbox.html" target="_top" title="reminder_outbox" alt="" coords="1365,2425,1582,2513">
+<area shape="rect" id="node60" href="reminder_rules.html" target="_top" title="reminder_rules" alt="" coords="752,3029,989,3175">
+<area shape="rect" id="node61" href="sessions.html" target="_top" title="sessions" alt="" coords="382,1961,527,2049">
+<area shape="rect" id="node62" href="subscription_items.html" target="_top" title="subscription_items" alt="" coords="339,2066,570,2154">
+<area shape="rect" id="node63" href="subscriptions.html" target="_top" title="subscriptions" alt="" coords="361,1855,548,1943">
+<area shape="rect" id="node64" href="synctoken.html" target="_top" title="synctoken" alt="" coords="1087,2283,1249,2371">
+<area shape="rect" id="node65" href="tasks.html" target="_top" title="tasks" alt="" coords="1723,858,1844,946">
+<area shape="rect" id="node66" href="term_user.html" target="_top" title="term_user" alt="" coords="1088,1117,1248,1205">
+<area shape="rect" id="node67" href="terms.html" target="_top" title="terms" alt="" coords="807,1097,934,1185">
+<area shape="rect" id="node68" href="u2f_key.html" target="_top" title="u2f_key" alt="" coords="1098,2707,1238,2795">
+<area shape="rect" id="node69" href="weather.html" target="_top" title="weather" alt="" coords="1095,277,1241,365">
+<area shape="rect" id="node70" href="webauthn_keys.html" target="_top" title="webauthn_keys" alt="" coords="1066,2602,1270,2690">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/accounts.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: false
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.3-SNAPSHOT</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

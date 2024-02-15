@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>monica.monica</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>monica</b></a><span class="navbar-brand" style="padding-left: 0">.monica</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/contacts.html" target="_top" title="contacts" alt="" coords="1314,3704,1594,4115">
+<area shape="rect" id="node15" href="tables/photos.html" target="_top" title="photos" alt="" coords="1012,4489,1199,4665">
+<area shape="rect" id="node21" href="tables/accounts.html" target="_top" title="accounts" alt="" coords="208,3271,547,3476">
+<area shape="rect" id="node28" href="tables/addressbooks.html" target="_top" title="addressbooks" alt="" coords="1011,2629,1200,2864">
+<area shape="rect" id="node52" href="tables/special_dates.html" target="_top" title="special_dates" alt="" coords="1013,4008,1198,4213">
+<area shape="rect" id="node65" href="tables/reminders.html" target="_top" title="reminders" alt="" coords="1006,3785,1206,3991">
+<area shape="rect" id="node2" href="tables/life_event_types.html" target="_top" title="life_event_types" alt="" coords="959,3527,1252,3732">
+<area shape="rect" id="node59" href="tables/life_event_categories.html" target="_top" title="life_event_categories" alt="" coords="602,3556,904,3732">
+<area shape="rect" id="node3" href="tables/reminder_rules.html" target="_top" title="reminder_rules" alt="" coords="634,4011,872,4157">
+<area shape="rect" id="node4" href="tables/import_jobs.html" target="_top" title="import_jobs" alt="" coords="1006,628,1205,804">
+<area shape="rect" id="node35" href="tables/users.html" target="_top" title="users" alt="" coords="591,1865,915,2159">
+<area shape="rect" id="node5" href="tables/pets.html" target="_top" title="pets" alt="" coords="1724,644,1897,879">
+<area shape="rect" id="node23" href="tables/pet_categories.html" target="_top" title="pet_categories" alt="" coords="1356,761,1551,879">
+<area shape="rect" id="node6" href="tables/relationship_type_groups.html" target="_top" title="relationship_type_groups" alt="" coords="613,2488,893,2664">
+<area shape="rect" id="node7" href="tables/term_user.html" target="_top" title="term_user" alt="" coords="1026,3097,1186,3273">
+<area shape="rect" id="node25" href="tables/terms.html" target="_top" title="terms" alt="" coords="665,3173,841,3291">
+<area shape="rect" id="node8" href="tables/modules.html" target="_top" title="modules" alt="" coords="666,4468,840,4615">
+<area shape="rect" id="node9" href="tables/currencies.html" target="_top" title="currencies" alt="" coords="296,2012,459,2129">
+<area shape="rect" id="node10" href="tables/import_job_reports.html" target="_top" title="import_job_reports" alt="" coords="1338,503,1569,708">
+<area shape="rect" id="node11" href="tables/default_life_event_types.html" target="_top" title="default_life_event_types" alt="" coords="2031,5,2324,152">
+<area shape="rect" id="node22" href="tables/default_life_event_categories.html" target="_top" title="default_life_event_categories" alt="" coords="1655,35,1966,152">
+<area shape="rect" id="node12" href="tables/emotion_call.html" target="_top" title="emotion_call" alt="" coords="2087,3249,2268,3455">
+<area shape="rect" id="node66" href="tables/emotions.html" target="_top" title="emotions" alt="" coords="1340,3287,1567,3463">
+<area shape="rect" id="node68" href="tables/calls.html" target="_top" title="calls" alt="" coords="1729,3105,1892,3311">
+<area shape="rect" id="node13" href="tables/places.html" target="_top" title="places" alt="" coords="682,5124,824,5271">
+<area shape="rect" id="node14" href="tables/entries.html" target="_top" title="entries" alt="" coords="684,6035,822,6211">
+<area shape="rect" id="node16" href="tables/addressbook_subscriptions.html" target="_top" title="addressbook_subscriptions" alt="" coords="1306,2495,1602,2729">
+<area shape="rect" id="node17" href="tables/journal_entries.html" target="_top" title="journal_entries" alt="" coords="653,392,853,539">
+<area shape="rect" id="node18" href="tables/emotion_activity.html" target="_top" title="emotion_activity" alt="" coords="1704,3328,1917,3504">
+<area shape="rect" id="node56" href="tables/activities.html" target="_top" title="activities" alt="" coords="1368,4132,1540,4337">
+<area shape="rect" id="node19" href="tables/activity_contact.html" target="_top" title="activity_contact" alt="" coords="1707,4392,1914,4544">
+<area shape="rect" id="node20" href="tables/u2f_key.html" target="_top" title="u2f_key" alt="" coords="1036,1676,1176,1852">
+<area shape="rect" id="node29" href="tables/genders.html" target="_top" title="genders" alt="" coords="22,3271,164,3447">
+<area shape="rect" id="node24" href="tables/synctoken.html" target="_top" title="synctoken" alt="" coords="1025,1001,1186,1207">
+<area shape="rect" id="node26" href="tables/gifts.html" target="_top" title="gifts" alt="" coords="1740,4111,1881,4375">
+<area shape="rect" id="node27" href="tables/emotions_secondary.html" target="_top" title="emotions_secondary" alt="" coords="984,3327,1228,3473">
+<area shape="rect" id="node32" href="tables/emotions_primary.html" target="_top" title="emotions_primary" alt="" coords="640,3329,866,3447">
+<area shape="rect" id="node30" href="tables/activity_types.html" target="_top" title="activity_types" alt="" coords="982,4267,1230,4472">
+<area shape="rect" id="node43" href="tables/activity_type_categories.html" target="_top" title="activity_type_categories" alt="" coords="618,4275,888,4451">
+<area shape="rect" id="node31" href="tables/export_jobs.html" target="_top" title="export_jobs" alt="" coords="1020,1224,1192,1429">
+<area shape="rect" id="node33" href="tables/audit_logs.html" target="_top" title="audit_logs" alt="" coords="1668,421,1952,627">
+<area shape="rect" id="node34" href="tables/addresses.html" target="_top" title="addresses" alt="" coords="1731,5236,1890,5471">
+<area shape="rect" id="node36" href="tables/tags.html" target="_top" title="tags" alt="" coords="1384,4757,1523,4904">
+<area shape="rect" id="node37" href="tables/address_contact_field_label.html" target="_top" title="address_contact_field_label" alt="" coords="2030,5389,2326,5541">
+<area shape="rect" id="node55" href="tables/contact_field_labels.html" target="_top" title="contact_field_labels" alt="" coords="1692,5524,1928,5729">
+<area shape="rect" id="node38" href="tables/contact_fields.html" target="_top" title="contact_fields" alt="" coords="1703,5747,1918,5981">
+<area shape="rect" id="node41" href="tables/contact_field_types.html" target="_top" title="contact_field_types" alt="" coords="1338,5295,1570,5471">
+<area shape="rect" id="node39" href="tables/days.html" target="_top" title="days" alt="" coords="684,2223,822,2399">
+<area shape="rect" id="node40" href="tables/activity_statistics.html" target="_top" title="activity_statistics" alt="" coords="1701,4791,1920,4967">
+<area shape="rect" id="node42" href="tables/documents.html" target="_top" title="documents" alt="" coords="1696,932,1924,1137">
+<area shape="rect" id="node44" href="tables/tasks.html" target="_top" title="tasks" alt="" coords="1732,2660,1889,2865">
+<area shape="rect" id="node45" href="tables/notes.html" target="_top" title="notes" alt="" coords="1738,2883,1883,3088">
+<area shape="rect" id="node46" href="tables/relationship_types.html" target="_top" title="relationship_types" alt="" coords="974,2400,1238,2576">
+<area shape="rect" id="node47" href="tables/messages.html" target="_top" title="messages" alt="" coords="2090,4463,2265,4697">
+<area shape="rect" id="node57" href="tables/conversations.html" target="_top" title="conversations" alt="" coords="1703,4984,1918,5219">
+<area shape="rect" id="node48" href="tables/invitations.html" target="_top" title="invitations" alt="" coords="1009,1977,1202,2153">
+<area shape="rect" id="node49" href="tables/companies.html" target="_top" title="companies" alt="" coords="1340,1004,1568,1151">
+<area shape="rect" id="node50" href="tables/reminder_outbox.html" target="_top" title="reminder_outbox" alt="" coords="1296,2981,1611,3187">
+<area shape="rect" id="node51" href="tables/contact_field_contact_field_label.html" target="_top" title="contact_field_contact_field_label" alt="" coords="2010,5717,2346,5869">
+<area shape="rect" id="node53" href="tables/weather.html" target="_top" title="weather" alt="" coords="1028,5065,1184,5241">
+<area shape="rect" id="node54" href="tables/gift_photo.html" target="_top" title="gift_photo" alt="" coords="2098,4059,2258,4205">
+<area shape="rect" id="node58" href="tables/contact_tag.html" target="_top" title="contact_tag" alt="" coords="1724,4597,1896,4773">
+<area shape="rect" id="node60" href="tables/occupations.html" target="_top" title="occupations" alt="" coords="1700,1155,1921,1360">
+<area shape="rect" id="node61" href="tables/metadata_love_relationships.html" target="_top" title="metadata_love_relationships" alt="" coords="2023,1540,2332,1716">
+<area shape="rect" id="node62" href="tables/relationships.html" target="_top" title="relationships" alt="" coords="1706,2312,1915,2576">
+<area shape="rect" id="node63" href="tables/life_events.html" target="_top" title="life_events" alt="" coords="1663,3557,1958,3821">
+<area shape="rect" id="node64" href="tables/contact_photo.html" target="_top" title="contact_photo" alt="" coords="1714,3911,1907,4057">
+<area shape="rect" id="node67" href="tables/webauthn_keys.html" target="_top" title="webauthn_keys" alt="" coords="1002,1447,1210,1623">
+<area shape="rect" id="node69" href="tables/recovery_codes.html" target="_top" title="recovery_codes" alt="" coords="1005,2207,1206,2383">
+<area shape="rect" id="node70" href="tables/debts.html" target="_top" title="debts" alt="" coords="1740,169,1881,404">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/contacts.html" target="_top" title="contacts" alt="" coords="1316,5257,1596,6759">
+<area shape="rect" id="node15" href="tables/photos.html" target="_top" title="photos" alt="" coords="1015,6503,1202,6831">
+<area shape="rect" id="node21" href="tables/accounts.html" target="_top" title="accounts" alt="" coords="211,5189,550,5664">
+<area shape="rect" id="node28" href="tables/addressbooks.html" target="_top" title="addressbooks" alt="" coords="1014,3915,1203,4213">
+<area shape="rect" id="node52" href="tables/special_dates.html" target="_top" title="special_dates" alt="" coords="1016,6157,1201,6485">
+<area shape="rect" id="node65" href="tables/reminders.html" target="_top" title="reminders" alt="" coords="1008,5695,1208,6140">
+<area shape="rect" id="node2" href="tables/life_event_types.html" target="_top" title="life_event_types" alt="" coords="962,5284,1255,5641">
+<area shape="rect" id="node59" href="tables/life_event_categories.html" target="_top" title="life_event_categories" alt="" coords="605,5356,906,5655">
+<area shape="rect" id="node3" href="tables/reminder_rules.html" target="_top" title="reminder_rules" alt="" coords="637,5780,874,6020">
+<area shape="rect" id="node4" href="tables/import_jobs.html" target="_top" title="import_jobs" alt="" coords="1009,889,1208,1364">
+<area shape="rect" id="node35" href="tables/users.html" target="_top" title="users" alt="" coords="594,2772,918,3628">
+<area shape="rect" id="node5" href="tables/pets.html" target="_top" title="pets" alt="" coords="1726,1071,1900,1369">
+<area shape="rect" id="node23" href="tables/pet_categories.html" target="_top" title="pet_categories" alt="" coords="1359,1159,1554,1369">
+<area shape="rect" id="node6" href="tables/relationship_type_groups.html" target="_top" title="relationship_type_groups" alt="" coords="616,4289,896,4529">
+<area shape="rect" id="node7" href="tables/term_user.html" target="_top" title="term_user" alt="" coords="1028,4955,1188,5195">
+<area shape="rect" id="node25" href="tables/terms.html" target="_top" title="terms" alt="" coords="668,4925,844,5195">
+<area shape="rect" id="node8" href="tables/modules.html" target="_top" title="modules" alt="" coords="669,6663,842,6961">
+<area shape="rect" id="node9" href="tables/currencies.html" target="_top" title="currencies" alt="" coords="299,3153,462,3393">
+<area shape="rect" id="node10" href="tables/import_job_reports.html" target="_top" title="import_job_reports" alt="" coords="1341,777,1572,1105">
+<area shape="rect" id="node11" href="tables/default_life_event_types.html" target="_top" title="default_life_event_types" alt="" coords="2034,5,2327,275">
+<area shape="rect" id="node22" href="tables/default_life_event_categories.html" target="_top" title="default_life_event_categories" alt="" coords="1658,35,1968,245">
+<area shape="rect" id="node12" href="tables/emotion_call.html" target="_top" title="emotion_call" alt="" coords="2090,4816,2271,5056">
+<area shape="rect" id="node66" href="tables/emotions.html" target="_top" title="emotions" alt="" coords="1343,4856,1570,5096">
+<area shape="rect" id="node68" href="tables/calls.html" target="_top" title="calls" alt="" coords="1732,4707,1894,5035">
+<area shape="rect" id="node13" href="tables/places.html" target="_top" title="places" alt="" coords="684,7804,827,8191">
+<area shape="rect" id="node14" href="tables/entries.html" target="_top" title="entries" alt="" coords="686,9033,825,9303">
+<area shape="rect" id="node16" href="tables/addressbook_subscriptions.html" target="_top" title="addressbook_subscriptions" alt="" coords="1308,3661,1604,4253">
+<area shape="rect" id="node17" href="tables/journal_entries.html" target="_top" title="journal_entries" alt="" coords="656,531,856,800">
+<area shape="rect" id="node18" href="tables/emotion_activity.html" target="_top" title="emotion_activity" alt="" coords="1706,5088,1920,5299">
+<area shape="rect" id="node56" href="tables/activities.html" target="_top" title="activities" alt="" coords="1370,6920,1542,7248">
+<area shape="rect" id="node19" href="tables/activity_contact.html" target="_top" title="activity_contact" alt="" coords="1710,7036,1916,7188">
+<area shape="rect" id="node20" href="tables/u2f_key.html" target="_top" title="u2f_key" alt="" coords="1038,2780,1178,3108">
+<area shape="rect" id="node29" href="tables/genders.html" target="_top" title="genders" alt="" coords="24,5248,167,5517">
+<area shape="rect" id="node24" href="tables/synctoken.html" target="_top" title="synctoken" alt="" coords="1028,1561,1189,1831">
+<area shape="rect" id="node26" href="tables/gifts.html" target="_top" title="gifts" alt="" coords="1742,6544,1884,7019">
+<area shape="rect" id="node27" href="tables/emotions_secondary.html" target="_top" title="emotions_secondary" alt="" coords="986,4727,1230,4937">
+<area shape="rect" id="node32" href="tables/emotions_primary.html" target="_top" title="emotions_primary" alt="" coords="643,4691,868,4872">
+<area shape="rect" id="node30" href="tables/activity_types.html" target="_top" title="activity_types" alt="" coords="984,6956,1232,7284">
+<area shape="rect" id="node43" href="tables/activity_type_categories.html" target="_top" title="activity_type_categories" alt="" coords="620,7015,891,7284">
+<area shape="rect" id="node31" href="tables/export_jobs.html" target="_top" title="export_jobs" alt="" coords="1022,1848,1194,2264">
+<area shape="rect" id="node33" href="tables/audit_logs.html" target="_top" title="audit_logs" alt="" coords="1671,667,1955,1053">
+<area shape="rect" id="node34" href="tables/addresses.html" target="_top" title="addresses" alt="" coords="1734,8072,1892,8371">
+<area shape="rect" id="node36" href="tables/tags.html" target="_top" title="tags" alt="" coords="1387,7337,1526,7607">
+<area shape="rect" id="node37" href="tables/address_contact_field_label.html" target="_top" title="address_contact_field_label" alt="" coords="2032,8289,2328,8441">
+<area shape="rect" id="node55" href="tables/contact_field_labels.html" target="_top" title="contact_field_labels" alt="" coords="1695,8424,1931,8664">
+<area shape="rect" id="node38" href="tables/contact_fields.html" target="_top" title="contact_fields" alt="" coords="1706,8681,1920,8980">
+<area shape="rect" id="node41" href="tables/contact_field_types.html" target="_top" title="contact_field_types" alt="" coords="1340,8061,1572,8419">
+<area shape="rect" id="node39" href="tables/days.html" target="_top" title="days" alt="" coords="686,3681,825,3980">
+<area shape="rect" id="node40" href="tables/activity_statistics.html" target="_top" title="activity_statistics" alt="" coords="1704,7469,1922,7739">
+<area shape="rect" id="node42" href="tables/documents.html" target="_top" title="documents" alt="" coords="1699,1423,1927,1839">
+<area shape="rect" id="node44" href="tables/tasks.html" target="_top" title="tasks" alt="" coords="1734,1856,1892,2213">
+<area shape="rect" id="node45" href="tables/notes.html" target="_top" title="notes" alt="" coords="1740,4361,1886,4689">
+<area shape="rect" id="node46" href="tables/relationship_types.html" target="_top" title="relationship_types" alt="" coords="976,4231,1240,4529">
+<area shape="rect" id="node47" href="tables/messages.html" target="_top" title="messages" alt="" coords="2093,7107,2268,7464">
+<area shape="rect" id="node57" href="tables/conversations.html" target="_top" title="conversations" alt="" coords="1706,7756,1920,8055">
+<area shape="rect" id="node48" href="tables/invitations.html" target="_top" title="invitations" alt="" coords="1012,3269,1205,3539">
+<area shape="rect" id="node49" href="tables/companies.html" target="_top" title="companies" alt="" coords="1342,1924,1570,2193">
+<area shape="rect" id="node50" href="tables/reminder_outbox.html" target="_top" title="reminder_outbox" alt="" coords="1299,4475,1614,4803">
+<area shape="rect" id="node51" href="tables/contact_field_contact_field_label.html" target="_top" title="contact_field_contact_field_label" alt="" coords="2012,8652,2348,8804">
+<area shape="rect" id="node53" href="tables/weather.html" target="_top" title="weather" alt="" coords="1030,7768,1186,8008">
+<area shape="rect" id="node54" href="tables/gift_photo.html" target="_top" title="gift_photo" alt="" coords="2100,6492,2260,6673">
+<area shape="rect" id="node58" href="tables/contact_tag.html" target="_top" title="contact_tag" alt="" coords="1727,7241,1899,7452">
+<area shape="rect" id="node60" href="tables/occupations.html" target="_top" title="occupations" alt="" coords="1702,2231,1924,2676">
+<area shape="rect" id="node61" href="tables/metadata_love_relationships.html" target="_top" title="metadata_love_relationships" alt="" coords="2026,2624,2335,3011">
+<area shape="rect" id="node62" href="tables/relationships.html" target="_top" title="relationships" alt="" coords="1708,4009,1918,4308">
+<area shape="rect" id="node63" href="tables/life_events.html" target="_top" title="life_events" alt="" coords="1666,5316,1960,5791">
+<area shape="rect" id="node64" href="tables/contact_photo.html" target="_top" title="contact_photo" alt="" coords="1716,6205,1910,6387">
+<area shape="rect" id="node67" href="tables/webauthn_keys.html" target="_top" title="webauthn_keys" alt="" coords="1004,2281,1212,2727">
+<area shape="rect" id="node69" href="tables/recovery_codes.html" target="_top" title="recovery_codes" alt="" coords="1008,3592,1209,3861">
+<area shape="rect" id="node70" href="tables/debts.html" target="_top" title="debts" alt="" coords="1742,263,1884,649">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/contacts.html" target="_top" title="contacts" alt="" coords="1328,2969,1608,3380">
+<area shape="rect" id="node15" href="tables/photos.html" target="_top" title="photos" alt="" coords="1027,3417,1213,3593">
+<area shape="rect" id="node21" href="tables/accounts.html" target="_top" title="accounts" alt="" coords="223,2915,561,3120">
+<area shape="rect" id="node28" href="tables/addressbooks.html" target="_top" title="addressbooks" alt="" coords="1025,2153,1215,2388">
+<area shape="rect" id="node53" href="tables/special_dates.html" target="_top" title="special_dates" alt="" coords="1027,2972,1213,3177">
+<area shape="rect" id="node68" href="tables/reminders.html" target="_top" title="reminders" alt="" coords="1020,3195,1220,3400">
+<area shape="rect" id="node2" href="tables/life_event_types.html" target="_top" title="life_event_types" alt="" coords="973,5240,1267,5445">
+<area shape="rect" id="node62" href="tables/life_event_categories.html" target="_top" title="life_event_categories" alt="" coords="617,5276,918,5452">
+<area shape="rect" id="node3" href="tables/reminder_rules.html" target="_top" title="reminder_rules" alt="" coords="649,640,886,787">
+<area shape="rect" id="node4" href="tables/import_jobs.html" target="_top" title="import_jobs" alt="" coords="1021,683,1219,859">
+<area shape="rect" id="node35" href="tables/users.html" target="_top" title="users" alt="" coords="605,2019,929,2312">
+<area shape="rect" id="node5" href="tables/pets.html" target="_top" title="pets" alt="" coords="1738,568,1911,803">
+<area shape="rect" id="node23" href="tables/pet_categories.html" target="_top" title="pet_categories" alt="" coords="1371,604,1565,721">
+<area shape="rect" id="node6" href="tables/relationship_type_groups.html" target="_top" title="relationship_type_groups" alt="" coords="627,339,907,515">
+<area shape="rect" id="node7" href="tables/term_user.html" target="_top" title="term_user" alt="" coords="1040,1020,1200,1196">
+<area shape="rect" id="node25" href="tables/terms.html" target="_top" title="terms" alt="" coords="679,1505,855,1623">
+<area shape="rect" id="node8" href="tables/modules.html" target="_top" title="modules" alt="" coords="681,984,854,1131">
+<area shape="rect" id="node9" href="tables/currencies.html" target="_top" title="currencies" alt="" coords="311,3872,473,3989">
+<area shape="rect" id="node10" href="tables/import_job_reports.html" target="_top" title="import_job_reports" alt="" coords="1353,775,1583,980">
+<area shape="rect" id="node11" href="tables/default_life_event_types.html" target="_top" title="default_life_event_types" alt="" coords="2045,5,2339,152">
+<area shape="rect" id="node22" href="tables/default_life_event_categories.html" target="_top" title="default_life_event_categories" alt="" coords="1669,35,1980,152">
+<area shape="rect" id="node12" href="tables/emotion_call.html" target="_top" title="emotion_call" alt="" coords="2101,2393,2283,2599">
+<area shape="rect" id="node70" href="tables/emotions.html" target="_top" title="emotions" alt="" coords="1355,4011,1581,4187">
+<area shape="rect" id="node72" href="tables/calls.html" target="_top" title="calls" alt="" coords="1743,1929,1906,2135">
+<area shape="rect" id="node13" href="tables/places.html" target="_top" title="places" alt="" coords="696,3712,839,3859">
+<area shape="rect" id="node14" href="tables/entries.html" target="_top" title="entries" alt="" coords="698,1312,837,1488">
+<area shape="rect" id="node16" href="tables/addressbook_subscriptions.html" target="_top" title="addressbook_subscriptions" alt="" coords="1320,1824,1616,2059">
+<area shape="rect" id="node17" href="tables/journal_entries.html" target="_top" title="journal_entries" alt="" coords="667,1831,867,1977">
+<area shape="rect" id="node18" href="tables/emotion_activity.html" target="_top" title="emotion_activity" alt="" coords="1718,4039,1931,4215">
+<area shape="rect" id="node59" href="tables/activities.html" target="_top" title="activities" alt="" coords="1382,4204,1554,4409">
+<area shape="rect" id="node19" href="tables/activity_contact.html" target="_top" title="activity_contact" alt="" coords="1721,3049,1928,3201">
+<area shape="rect" id="node20" href="tables/u2f_key.html" target="_top" title="u2f_key" alt="" coords="1050,1629,1190,1805">
+<area shape="rect" id="node29" href="tables/genders.html" target="_top" title="genders" alt="" coords="21,2915,163,3091">
+<area shape="rect" id="node48" href="tables/job_batches.html" target="_top" title="job_batches" alt="" coords="5,3277,179,3395">
+<area shape="rect" id="node24" href="tables/synctoken.html" target="_top" title="synctoken" alt="" coords="1039,1213,1201,1419">
+<area shape="rect" id="node26" href="tables/gifts.html" target="_top" title="gifts" alt="" coords="1754,3469,1895,3733">
+<area shape="rect" id="node27" href="tables/emotions_secondary.html" target="_top" title="emotions_secondary" alt="" coords="998,4092,1242,4239">
+<area shape="rect" id="node32" href="tables/emotions_primary.html" target="_top" title="emotions_primary" alt="" coords="655,4085,880,4203">
+<area shape="rect" id="node30" href="tables/activity_types.html" target="_top" title="activity_types" alt="" coords="996,4292,1244,4497">
+<area shape="rect" id="node43" href="tables/activity_type_categories.html" target="_top" title="activity_type_categories" alt="" coords="632,4321,903,4497">
+<area shape="rect" id="node31" href="tables/export_jobs.html" target="_top" title="export_jobs" alt="" coords="1034,1931,1206,2136">
+<area shape="rect" id="node33" href="tables/audit_logs.html" target="_top" title="audit_logs" alt="" coords="1683,1653,1967,1859">
+<area shape="rect" id="node34" href="tables/addresses.html" target="_top" title="addresses" alt="" coords="1745,5728,1904,5963">
+<area shape="rect" id="node36" href="tables/tags.html" target="_top" title="tags" alt="" coords="1399,4800,1537,4947">
+<area shape="rect" id="node37" href="tables/address_contact_field_label.html" target="_top" title="address_contact_field_label" alt="" coords="2044,5699,2340,5851">
+<area shape="rect" id="node58" href="tables/contact_field_labels.html" target="_top" title="contact_field_labels" alt="" coords="1707,5505,1943,5711">
+<area shape="rect" id="node38" href="tables/contact_fields.html" target="_top" title="contact_fields" alt="" coords="1717,4520,1932,4755">
+<area shape="rect" id="node41" href="tables/contact_field_types.html" target="_top" title="contact_field_types" alt="" coords="1352,4535,1584,4711">
+<area shape="rect" id="node39" href="tables/days.html" target="_top" title="days" alt="" coords="698,3116,837,3292">
+<area shape="rect" id="node40" href="tables/activity_statistics.html" target="_top" title="activity_statistics" alt="" coords="1715,2152,1934,2328">
+<area shape="rect" id="node42" href="tables/documents.html" target="_top" title="documents" alt="" coords="1711,2345,1939,2551">
+<area shape="rect" id="node44" href="tables/tasks.html" target="_top" title="tasks" alt="" coords="1746,2568,1903,2773">
+<area shape="rect" id="node45" href="tables/notes.html" target="_top" title="notes" alt="" coords="1752,2791,1897,2996">
+<area shape="rect" id="node46" href="tables/relationship_types.html" target="_top" title="relationship_types" alt="" coords="988,303,1252,479">
+<area shape="rect" id="node47" href="tables/messages.html" target="_top" title="messages" alt="" coords="2105,4133,2279,4368">
+<area shape="rect" id="node60" href="tables/conversations.html" target="_top" title="conversations" alt="" coords="1717,4268,1932,4503">
+<area shape="rect" id="node49" href="tables/invitations.html" target="_top" title="invitations" alt="" coords="1023,2405,1217,2581">
+<area shape="rect" id="node50" href="tables/companies.html" target="_top" title="companies" alt="" coords="1354,5072,1582,5219">
+<area shape="rect" id="node51" href="tables/reminder_outbox.html" target="_top" title="reminder_outbox" alt="" coords="1311,3519,1625,3724">
+<area shape="rect" id="node52" href="tables/contact_field_contact_field_label.html" target="_top" title="contact_field_contact_field_label" alt="" coords="2024,5371,2360,5523">
+<area shape="rect" id="node54" href="tables/subscription_items.html" target="_top" title="subscription_items" alt="" coords="277,3495,507,3700">
+<area shape="rect" id="node55" href="tables/weather.html" target="_top" title="weather" alt="" coords="1042,3683,1198,3859">
+<area shape="rect" id="node56" href="tables/subscriptions.html" target="_top" title="subscriptions" alt="" coords="299,3137,485,3343">
+<area shape="rect" id="node57" href="tables/gift_photo.html" target="_top" title="gift_photo" alt="" coords="2112,3416,2272,3563">
+<area shape="rect" id="node61" href="tables/contact_tag.html" target="_top" title="contact_tag" alt="" coords="1739,4772,1911,4948">
+<area shape="rect" id="node63" href="tables/occupations.html" target="_top" title="occupations" alt="" coords="1714,4965,1935,5171">
+<area shape="rect" id="node64" href="tables/metadata_love_relationships.html" target="_top" title="metadata_love_relationships" alt="" coords="2037,169,2347,345">
+<area shape="rect" id="node65" href="tables/relationships.html" target="_top" title="relationships" alt="" coords="1720,251,1929,515">
+<area shape="rect" id="node66" href="tables/life_events.html" target="_top" title="life_events" alt="" coords="1677,5188,1972,5452">
+<area shape="rect" id="node67" href="tables/contact_photo.html" target="_top" title="contact_photo" alt="" coords="1728,3267,1921,3413">
+<area shape="rect" id="node69" href="tables/sessions.html" target="_top" title="sessions" alt="" coords="319,3360,465,3477">
+<area shape="rect" id="node71" href="tables/webauthn_keys.html" target="_top" title="webauthn_keys" alt="" coords="1016,1436,1224,1612">
+<area shape="rect" id="node73" href="tables/recovery_codes.html" target="_top" title="recovery_codes" alt="" coords="1019,2599,1221,2775">
+<area shape="rect" id="node74" href="tables/debts.html" target="_top" title="debts" alt="" coords="1754,3751,1895,3985">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/contacts.html" target="_top" title="contacts" alt="" coords="1332,4028,1612,5529">
+<area shape="rect" id="node15" href="tables/photos.html" target="_top" title="photos" alt="" coords="1031,5289,1217,5617">
+<area shape="rect" id="node21" href="tables/accounts.html" target="_top" title="accounts" alt="" coords="227,4424,565,4899">
+<area shape="rect" id="node28" href="tables/addressbooks.html" target="_top" title="addressbooks" alt="" coords="1029,3412,1219,3711">
+<area shape="rect" id="node53" href="tables/special_dates.html" target="_top" title="special_dates" alt="" coords="1031,4481,1217,4809">
+<area shape="rect" id="node68" href="tables/reminders.html" target="_top" title="reminders" alt="" coords="1024,4827,1224,5272">
+<area shape="rect" id="node2" href="tables/life_event_types.html" target="_top" title="life_event_types" alt="" coords="977,7971,1271,8328">
+<area shape="rect" id="node62" href="tables/life_event_categories.html" target="_top" title="life_event_categories" alt="" coords="621,8023,922,8321">
+<area shape="rect" id="node3" href="tables/reminder_rules.html" target="_top" title="reminder_rules" alt="" coords="653,847,890,1087">
+<area shape="rect" id="node4" href="tables/import_jobs.html" target="_top" title="import_jobs" alt="" coords="1025,883,1223,1357">
+<area shape="rect" id="node35" href="tables/users.html" target="_top" title="users" alt="" coords="609,3067,933,3923">
+<area shape="rect" id="node5" href="tables/pets.html" target="_top" title="pets" alt="" coords="1742,743,1915,1041">
+<area shape="rect" id="node23" href="tables/pet_categories.html" target="_top" title="pet_categories" alt="" coords="1375,779,1569,989">
+<area shape="rect" id="node6" href="tables/relationship_type_groups.html" target="_top" title="relationship_type_groups" alt="" coords="631,468,911,708">
+<area shape="rect" id="node7" href="tables/term_user.html" target="_top" title="term_user" alt="" coords="1044,1519,1204,1759">
+<area shape="rect" id="node25" href="tables/terms.html" target="_top" title="terms" alt="" coords="683,2261,859,2531">
+<area shape="rect" id="node8" href="tables/modules.html" target="_top" title="modules" alt="" coords="685,1483,858,1781">
+<area shape="rect" id="node9" href="tables/currencies.html" target="_top" title="currencies" alt="" coords="315,5960,477,6200">
+<area shape="rect" id="node10" href="tables/import_job_reports.html" target="_top" title="import_job_reports" alt="" coords="1357,1043,1587,1371">
+<area shape="rect" id="node11" href="tables/default_life_event_types.html" target="_top" title="default_life_event_types" alt="" coords="2049,5,2343,275">
+<area shape="rect" id="node22" href="tables/default_life_event_categories.html" target="_top" title="default_life_event_categories" alt="" coords="1673,35,1984,245">
+<area shape="rect" id="node12" href="tables/emotion_call.html" target="_top" title="emotion_call" alt="" coords="2105,3315,2287,3555">
+<area shape="rect" id="node70" href="tables/emotions.html" target="_top" title="emotions" alt="" coords="1359,6108,1585,6348">
+<area shape="rect" id="node72" href="tables/calls.html" target="_top" title="calls" alt="" coords="1747,2500,1910,2828">
+<area shape="rect" id="node13" href="tables/places.html" target="_top" title="places" alt="" coords="700,5560,843,5947">
+<area shape="rect" id="node14" href="tables/entries.html" target="_top" title="entries" alt="" coords="702,1975,841,2244">
+<area shape="rect" id="node16" href="tables/addressbook_subscriptions.html" target="_top" title="addressbook_subscriptions" alt="" coords="1324,2815,1620,3407">
+<area shape="rect" id="node17" href="tables/journal_entries.html" target="_top" title="journal_entries" alt="" coords="671,2756,871,3025">
+<area shape="rect" id="node18" href="tables/emotion_activity.html" target="_top" title="emotion_activity" alt="" coords="1722,6267,1935,6477">
+<area shape="rect" id="node59" href="tables/activities.html" target="_top" title="activities" alt="" coords="1386,6365,1558,6693">
+<area shape="rect" id="node19" href="tables/activity_contact.html" target="_top" title="activity_contact" alt="" coords="1725,4321,1932,4473">
+<area shape="rect" id="node20" href="tables/u2f_key.html" target="_top" title="u2f_key" alt="" coords="1054,2525,1194,2853">
+<area shape="rect" id="node29" href="tables/genders.html" target="_top" title="genders" alt="" coords="25,4483,167,4752">
+<area shape="rect" id="node48" href="tables/job_batches.html" target="_top" title="job_batches" alt="" coords="9,5161,183,5519">
+<area shape="rect" id="node24" href="tables/synctoken.html" target="_top" title="synctoken" alt="" coords="1043,1776,1205,2045">
+<area shape="rect" id="node26" href="tables/gifts.html" target="_top" title="gifts" alt="" coords="1758,5335,1899,5809">
+<area shape="rect" id="node27" href="tables/emotions_secondary.html" target="_top" title="emotions_secondary" alt="" coords="1002,6180,1246,6391">
+<area shape="rect" id="node32" href="tables/emotions_primary.html" target="_top" title="emotions_primary" alt="" coords="659,6176,884,6357">
+<area shape="rect" id="node30" href="tables/activity_types.html" target="_top" title="activity_types" alt="" coords="1000,6444,1248,6772">
+<area shape="rect" id="node43" href="tables/activity_type_categories.html" target="_top" title="activity_type_categories" alt="" coords="636,6496,907,6765">
+<area shape="rect" id="node31" href="tables/export_jobs.html" target="_top" title="export_jobs" alt="" coords="1038,2979,1210,3395">
+<area shape="rect" id="node33" href="tables/audit_logs.html" target="_top" title="audit_logs" alt="" coords="1687,2096,1971,2483">
+<area shape="rect" id="node34" href="tables/addresses.html" target="_top" title="addresses" alt="" coords="1749,8639,1908,8937">
+<area shape="rect" id="node36" href="tables/tags.html" target="_top" title="tags" alt="" coords="1403,7265,1541,7535">
+<area shape="rect" id="node37" href="tables/address_contact_field_label.html" target="_top" title="address_contact_field_label" alt="" coords="2048,8609,2344,8761">
+<area shape="rect" id="node58" href="tables/contact_field_labels.html" target="_top" title="contact_field_labels" alt="" coords="1711,8381,1947,8621">
+<area shape="rect" id="node38" href="tables/contact_fields.html" target="_top" title="contact_fields" alt="" coords="1721,6847,1936,7145">
+<area shape="rect" id="node41" href="tables/contact_field_types.html" target="_top" title="contact_field_types" alt="" coords="1356,6819,1588,7176">
+<area shape="rect" id="node39" href="tables/days.html" target="_top" title="days" alt="" coords="702,4625,841,4924">
+<area shape="rect" id="node40" href="tables/activity_statistics.html" target="_top" title="activity_statistics" alt="" coords="1719,2845,1938,3115">
+<area shape="rect" id="node42" href="tables/documents.html" target="_top" title="documents" alt="" coords="1715,3132,1943,3548">
+<area shape="rect" id="node44" href="tables/tasks.html" target="_top" title="tasks" alt="" coords="1750,3565,1907,3923">
+<area shape="rect" id="node45" href="tables/notes.html" target="_top" title="notes" alt="" coords="1756,3940,1901,4268">
+<area shape="rect" id="node46" href="tables/relationship_types.html" target="_top" title="relationship_types" alt="" coords="992,409,1256,708">
+<area shape="rect" id="node47" href="tables/messages.html" target="_top" title="messages" alt="" coords="2109,6396,2283,6753">
+<area shape="rect" id="node60" href="tables/conversations.html" target="_top" title="conversations" alt="" coords="1721,6531,1936,6829">
+<area shape="rect" id="node49" href="tables/invitations.html" target="_top" title="invitations" alt="" coords="1027,3728,1221,3997">
+<area shape="rect" id="node50" href="tables/companies.html" target="_top" title="companies" alt="" coords="1358,7660,1586,7929">
+<area shape="rect" id="node51" href="tables/reminder_outbox.html" target="_top" title="reminder_outbox" alt="" coords="1315,5619,1629,5947">
+<area shape="rect" id="node52" href="tables/contact_field_contact_field_label.html" target="_top" title="contact_field_contact_field_label" alt="" coords="2028,8247,2364,8399">
+<area shape="rect" id="node54" href="tables/subscription_items.html" target="_top" title="subscription_items" alt="" coords="281,5577,511,5876">
+<area shape="rect" id="node55" href="tables/weather.html" target="_top" title="weather" alt="" coords="1046,5707,1202,5947">
+<area shape="rect" id="node56" href="tables/subscriptions.html" target="_top" title="subscriptions" alt="" coords="303,4916,489,5303">
+<area shape="rect" id="node57" href="tables/gift_photo.html" target="_top" title="gift_photo" alt="" coords="2116,5283,2276,5464">
+<area shape="rect" id="node61" href="tables/contact_tag.html" target="_top" title="contact_tag" alt="" coords="1743,7163,1915,7373">
+<area shape="rect" id="node63" href="tables/occupations.html" target="_top" title="occupations" alt="" coords="1718,7391,1939,7836">
+<area shape="rect" id="node64" href="tables/metadata_love_relationships.html" target="_top" title="metadata_love_relationships" alt="" coords="2041,292,2351,679">
+<area shape="rect" id="node65" href="tables/relationships.html" target="_top" title="relationships" alt="" coords="1724,373,1933,672">
+<area shape="rect" id="node66" href="tables/life_events.html" target="_top" title="life_events" alt="" coords="1681,7853,1976,8328">
+<area shape="rect" id="node67" href="tables/contact_photo.html" target="_top" title="contact_photo" alt="" coords="1732,4956,1925,5137">
+<area shape="rect" id="node69" href="tables/sessions.html" target="_top" title="sessions" alt="" coords="323,5320,469,5560">
+<area shape="rect" id="node71" href="tables/webauthn_keys.html" target="_top" title="webauthn_keys" alt="" coords="1020,2063,1228,2508">
+<area shape="rect" id="node73" href="tables/recovery_codes.html" target="_top" title="recovery_codes" alt="" coords="1023,4015,1225,4284">
+<area shape="rect" id="node74" href="tables/debts.html" target="_top" title="debts" alt="" coords="1758,5827,1899,6213">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.3-SNAPSHOT</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>
