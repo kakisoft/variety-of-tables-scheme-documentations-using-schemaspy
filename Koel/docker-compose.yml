@@ -1,0 +1,37 @@
+version: "3.4"
+
+services:
+  app:
+    image: hyzual/koel
+    depends_on:
+      - db
+    ports:
+      - 8080:80
+    environment:
+      - APP_KEY=kakisoft
+      - DB_HOST=db
+      - DB_USERNAME=koel
+      - DB_PASSWORD=koel
+    volumes:
+      - data:/var/www/html/storage
+    restart: always
+
+  db:
+    image: mysql:5.7
+    container_name: db-koel
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_DATABASE=koel
+      - MYSQL_USER=koel
+      - MYSQL_PASSWORD=koel
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+
+volumes:
+  data:
+    name: data
+  mysql:
+    name: mysql
