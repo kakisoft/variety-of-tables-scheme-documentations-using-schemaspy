@@ -17,6 +17,9 @@ services:
     restart: always
     depends_on:
       - mysql
+    networks:
+      - default
+      - shared-network-wiki
 
   mysql:
     image: mysql:8.0
@@ -31,7 +34,15 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     restart: always
+    networks:
+      - default
+      - shared-network-wiki
 
 volumes:
   mediawiki_data:
   mysql_data:
+
+networks:
+  default:
+  shared-network-wiki:
+    external: true

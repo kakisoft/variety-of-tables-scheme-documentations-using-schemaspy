@@ -3,12 +3,6 @@
 ## docker hub
 https://hub.docker.com/_/mediawiki/  
 
-docker-compose.yml は、公式記載の内容から、少し修正しています。  
-
-```yaml
-  ports:
-    - "3306:3306"
-```
 
 ## 起動・終了
 ```
@@ -34,4 +28,17 @@ docker-compose -f docker-compose-schemaspy.yml down --rmi all --volumes
 ```
 
 ____________________________________________________________________________________
+
+## コンテナにログイン
+```
+docker-compose exec mediawiki bash
+docker-compose exec mysql bash
+```
+
+
+## docker network 設定
+```
+docker network create shared-network-wiki
+docker-compose -f docker-compose-schemaspy.yml up --abort-on-container-exit
+```
 

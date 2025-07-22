@@ -3,14 +3,16 @@ version: '3.7'
 services:
   schemaspy:
     container_name: schemaspy-01
-    image: schemaspy/schemaspy:snapshot
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./db_docs:/output
       - ./schemaspy.properties:/schemaspy.properties
-#     networks:
-#       - default
-#       - shared-network-monica
+    networks:
+      - default
+      - shared-network-wiki
 
-# networks:
-#   shared-network-monica:
-#     external: true
+networks:
+  shared-network-wiki:
+    external: true
